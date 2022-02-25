@@ -63,4 +63,4 @@ do {
 
   volverAComprar = prompt("Deseas volver a comprar? SI/NO")
 } while (volverAComprar == "SI");
-// precioConDescuento(precioTotal,descuento);
+
