@@ -11,7 +11,16 @@ let producto1 = new Producto("mini gris", "1580", "40");
 let producto2 = new Producto("mini negro", "1500", "42");
 let producto3 = new Producto("short blanco", "1700", "44");
 let producto4 = new Producto("jean", "2500", "38");
+let descuento = (0.10)
 
+// funciones
+const precioConDescuento = function (precioTotal, descuento) {
+  return (precioTotal * descuento)
+}
+
+const precioTotal = function (precioUnidad, cantidad) {
+  return (precioUnidad * cantidad)
+}
 
 do {
   producto = prompt("Que producto desea?\n Descripción del producto: NOMBRE, PRECIO, TALLE.\n1. Mini gris, 1580, 40 \n2. Mini negro, 1500, 42 \n3. Short blanco, 1700, 44\n 4. jean, 2500, 38")
@@ -42,15 +51,16 @@ do {
       break;
     
   }
-  let precioTotal = precioUnidad * cantidad;
-  let precioConDescuento = (precioTotal - (precioTotal * 0.10));
+  
   cupon = prompt("Ingrese su código para hacer el descuento, sino desea del escuento ingrese NO")
   if (cupon == "BIENVENIDO10"){
-    alert("El total de su compra con el descuento es de $" + precioConDescuento + "\n"+ producto + " x " + cantidad + " unidades");
+
+    alert("El total de su compra con el descuento es de $" + precioConDescuento(precioTotal,descuento) + "\n"+ producto + " x " + cantidad + " unidades");
     
   } else {
-    alert("El total de su compra sin descuento es de $" + precioTotal + "\n"+ producto + " x " + cantidad + " unidades");
+    alert("El total de su compra sin descuento es de $" + precioTotal(precioUnidad, cantidad) + "\n"+ producto + " x " + cantidad + " unidades");
   }
 
   volverAComprar = prompt("Deseas volver a comprar? SI/NO")
 } while (volverAComprar == "SI");
+// precioConDescuento(precioTotal,descuento);
