@@ -11,15 +11,15 @@ let producto1 = new Producto("mini gris", "1580", "40");
 let producto2 = new Producto("mini negro", "1500", "42");
 let producto3 = new Producto("short blanco", "1700", "44");
 let producto4 = new Producto("jean", "2500", "38");
-let descuento = (0.10)
+let descuento = (0.10);
 
 // funciones
-const precioConDescuento = function (precioTotal, descuento) {
-  return (precioTotal * descuento)
-}
-
 const precioTotal = function (precioUnidad, cantidad) {
   return (precioUnidad * cantidad)
+}
+
+const precioConDescuento = function (precioUnidad, descuento) {
+  return ((precioUnidad * cantidad) - (precioUnidad * cantidad * descuento))
 }
 
 do {
@@ -55,7 +55,7 @@ do {
   cupon = prompt("Ingrese su código para hacer el descuento, sino desea del escuento ingrese NO")
   if (cupon == "BIENVENIDO10"){
 
-    alert("El total de su compra con el descuento es de $" + precioConDescuento(precioTotal,descuento) + "\n"+ producto + " x " + cantidad + " unidades");
+    alert("El total de su compra con el descuento es de $" + precioConDescuento(precioUnidad,descuento) + "\n"+ producto + " x " + cantidad + " unidades");
     
   } else {
     alert("El total de su compra sin descuento es de $" + precioTotal(precioUnidad, cantidad) + "\n"+ producto + " x " + cantidad + " unidades");
